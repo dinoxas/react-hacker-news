@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
 import { ThemeProvider } from './contexts/theme'
 import Nav from './components/Nav'
-import Top from './components/Top'
+import Posts from './components/Posts'
 import New from './components/New'
+import Loading from './components/Loading'
 import './index.css'
 
 
@@ -28,10 +28,12 @@ class App extends React.Component {
             <div className={this.state.theme}>
               <div className='container'>
                 <Nav />
+                <React.Suspense fallback={<Loading />}>
                   <Switch>
-                    <Route exact path='/' component={Top} />
+                    <Route exact path='/' component={Posts} />
                     <Route exact path='/new' component={New} />
                   </Switch>
+                </React.Suspense>
 
               </div>
             </div>
