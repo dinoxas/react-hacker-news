@@ -50,3 +50,11 @@ export function fetchPosts (ids) {
   return Promise.all(ids.map(fetchItem))
     .then((posts) => removeDeleted(onlyPosts(removeDead(posts))))
 }
+
+export function formatDate (timestamp) {
+  return new Date(timestamp * 1000)
+    .toLocaleDateString("en-US", {
+      hour: 'numeric' ,
+      minute: 'numeric'
+    })
+}
