@@ -1,6 +1,6 @@
 # Hacker news clone with React
 
-[Demo](https://dinoxas-fake-twitter.netlify.com)
+[Demo](https://dinoxas-hackernews.netlify.com/)
 
 ## Built With
 
